@@ -51,11 +51,10 @@ export default {
             }
         };
         function componentToHex(c) {
-            var hex = c.toString(16);
-            return hex.length == 1 ? "0" + hex : hex;
+            return c.toString(16).length == 1 ? "0" + c.toString(16) : c.toString(16);
         }
         function rgbToHex(r, g, b) {
-            return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+            return `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`;
         }
         const takeColor = (e) => {
             const backgroundColor = getComputedStyle(e.target).backgroundColor;
